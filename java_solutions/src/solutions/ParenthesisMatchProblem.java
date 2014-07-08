@@ -2,6 +2,11 @@ package solutions;
 
 import utils.MyGenericStack;
 
+/**
+ * This class implements solution to check if a given string with parenthesis is valid and also calculates the max distance between the { and }. 
+ * @author rakuma
+ *
+ */
 public class ParenthesisMatchProblem {
 	public String inputString;
 	
