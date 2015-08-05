@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 public class RecursionSample {
 
@@ -24,6 +26,7 @@ public class RecursionSample {
 	 */
 	public static int findMagicIndex(int[] arr, int start, int end)
 	{
+		System.out.printf("start: %d, end: %d\n", start, end);
 		if (start < 0 || end > arr.length || start > end)
 		{
 			return -1;
@@ -31,6 +34,7 @@ public class RecursionSample {
 		
 		int mid = (start + end)/2;
 		int midVal = arr[mid];
+		System.out.println("Mid is " + mid);
 		
 		if (mid == midVal)
 		{
@@ -59,7 +63,9 @@ public class RecursionSample {
 		System.out.println(mystery(2,25));
 		System.out.println(mystery(3,11));
 		
-		int[] arr = {-2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+		int[] arr = {-2, 2, 3, 4, 5, 6, 7, 7, 9, 10, 11};
+				
+		System.out.printf("Magic index in arr %s: %d\n", Arrays.asList(arr).toString(), findMagicIndex(arr, 0, arr.length-1));
 	}
 
 }

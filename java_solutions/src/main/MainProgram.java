@@ -10,6 +10,7 @@ public class MainProgram {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		/***********************************************CLOCK ANGLE PROBLEM************************************************************/
 		String time = "2:30";
 		try
@@ -168,6 +169,23 @@ public class MainProgram {
 			catch (Exception ex)
 			{
 				System.out.printf("Failed to partition list around the given value %d. Error: %s\n",k, ex);
+			
+			}
+		}
+		/*****************************************************************************************************************************/
+		
+		/*********************************************** INVERT STACK PROBLEM ************************************************************/
+		{
+			try
+			{
+				System.out.println("##### INVERT STACK PROBLEM ####");
+				InvertStackProblem isp = new InvertStackProblem();
+				
+				isp.Run();
+			}
+			catch (Exception ex)
+			{
+				System.out.printf("Failed to invert stack. Error: %s\n", ex);
 			
 			}
 		}

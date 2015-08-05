@@ -66,7 +66,8 @@ public class MyGenericStack<T> {
 	{
 		for (T element: myList)
 		{
-			System.out.println(element);
+			System.out.print(element + " ");
 		}
+		System.out.println();
 	}
 }
