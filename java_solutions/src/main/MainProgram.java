@@ -1,6 +1,7 @@
 package main;
 
 import solutions.*;
+import utils.LinkedListNode;
 
 public class MainProgram {
 
@@ -136,6 +137,37 @@ public class MainProgram {
 			catch (Exception ex)
 			{
 				System.out.printf("Failed to check if strings %s and %s are anagrams with exception %s\n",firstString, secondString, ex);
+			
+			}
+		}
+		/*****************************************************************************************************************************/
+		
+		/*********************************************** PARTITION LINKED LIST  ************************************************************/
+		{
+			int[] inputList = {2, 4, 1, 6, 9};
+			int k = 1;
+			try
+			{
+				System.out.println("##### PARTITION LINKED LIST AROUND X #####");
+				PartitionListAroundXProblem plb = new PartitionListAroundXProblem();
+				LinkedListNode<Integer> head = plb.CreateList(inputList);
+				plb.DisplayList(head);	
+				
+				System.out.println("\nMethod 1: List after partitioning it around " + k);
+				LinkedListNode<Integer> partitionList = plb.Run(head, k);
+				plb.DisplayList(partitionList);
+				
+				System.out.println();
+				LinkedListNode<Integer> head1 = plb.CreateList(inputList);
+				plb.DisplayList(head1);	
+				System.out.println("\nMethod 2: List after partitioning it around " + k);
+				LinkedListNode<Integer> partitionList1 = plb.Run1(head1, k);
+				plb.DisplayList(partitionList1);
+				
+			}
+			catch (Exception ex)
+			{
+				System.out.printf("Failed to partition list around the given value %d. Error: %s\n",k, ex);
 			
 			}
 		}

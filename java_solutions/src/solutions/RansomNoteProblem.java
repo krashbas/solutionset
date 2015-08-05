@@ -3,7 +3,7 @@ package solutions;
 import java.util.HashMap;
 
 public class RansomNoteProblem {
-
+        
 	public String magazine;
 	public String ransomNote;
 	
@@ -14,7 +14,7 @@ public class RansomNoteProblem {
 	}
 	
 	/**
-	 * Check if the words in ransom note can be formed by the words in magazine
+	 * Check if the words in ransom note can be formed by the words in magazine                                                                              
 	 * @return true or false
 	 * @throws Exception
 	 */
