@@ -1,25 +1,65 @@
 package com.solutions;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RansomNoteProblem {
+import com.solutions.utils.Utilities;
+
+public class RansomNoteProblem implements IProblemSolutions {
         
-	public String magazine;
-	public String ransomNote;
+	protected String magazine;
+	protected String ransomNote;
 	
+	/**
+	 * Default constructor 
+	 */
+	public RansomNoteProblem()
+	{
+		
+	}
+	
+	/**
+	 * Constructor With arguments
+	 * @param magazine
+	 * @param ransomNote
+	 */
 	public RansomNoteProblem(String magazine, String ransomNote)
 	{
 		this.magazine = magazine;
 		this.ransomNote = ransomNote;
 	}
 	
+	@Override
+	public void setInput(HashMap<String, String> input) {
+		// TODO Auto-generated method stub
+		for (Field f: getInputFields())
+		{
+			try
+			{
+				f.set(this, input.get(f.getName()));
+			}
+			catch (IllegalAccessException ex)
+			{}
+		}
+	}
+
+	@Override
+	public void displayInput() {
+		// TODO Auto-generated method stub
+		System.out.printf("Input magazine content: %s\n", magazine);
+		System.out.printf("Input ransom note: %s\n", ransomNote);
+	}
+
 	/**
 	 * Check if the words in ransom note can be formed by the words in magazine                                                                              
 	 * @return true or false
 	 * @throws Exception
 	 */
-	public Boolean Run() throws Exception
-	{
+	@Override
+	public void run() throws Exception {
+		// TODO Auto-generated method stub
+		boolean result = false;
 		
 		HashMap<String, Integer> wordFrequency = new HashMap<String, Integer>();
 		// traverse through the magazine and keep track of words
@@ -46,7 +86,7 @@ public class RansomNoteProblem {
 			if (currentCount == null)
 			{
 				System.out.printf("Word %s not found in magazine. Return failure\n", word);
-				return false;
+				result = false;
 			}
 			else
 			{
@@ -54,12 +94,23 @@ public class RansomNoteProblem {
 				if (currentCount < 0)
 				{
 					System.out.printf("Not enough occurrences of word %s. Return failure\n", word);
-					return false;
+					result = false;
 				}
 				wordFrequency.put(word, currentCount);
 			}
 		}
-		System.out.printf("Ransom Note \n---%s---\n can be formed from magazine: \n---%s---\n", ransomNote, magazine);
-		return true;
+		
+		result = true;
+		String resultString = (result)?"can":"cannot";
+		System.out.printf("RansomNoteProblem: Ransom note --\"%s\"-- %s be formed from magazine --\"%s\"--\n", ransomNote, resultString, magazine);
+	}
+
+	/**
+	 * Get all the fields in class with protected modifier
+	 * @return
+	 */
+	private ArrayList<Field> getInputFields()
+	{
+		return Utilities.getProtectedFields(this.getClass());
 	}
 }

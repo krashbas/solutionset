@@ -1,36 +1,76 @@
 package com.solutions;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.solutions.utils.MyGenericStack;
+import com.solutions.utils.Utilities;
 
 /**
  * This class implements solution to check if a given string with parenthesis is valid and also calculates the max distance between the { and }. 
  * @author rakuma
  *
  */
-public class ParenthesisMatchProblem {
-	public String inputString;
+public class ParenthesisMatchProblem implements IProblemSolutions {
+	protected String inputString;
 	
 	/**
 	 * Stack to save the indices of the braces as the input string is traversed to determine validity
 	 */
-	private MyGenericStack<Integer> indexStack; 
-	public int maxDistanceBetweenBraces;
+	private MyGenericStack<Integer> indexStack;
 	
+	/**
+	 * Default constructor
+	 */
+	public ParenthesisMatchProblem()
+	{
+		indexStack = new MyGenericStack<Integer>();
+	}
+	
+	/**
+	 * Constructor with input
+	 * @param input
+	 */
 	public ParenthesisMatchProblem (String input)
 	{
 		this.inputString = input;
 		indexStack = new MyGenericStack<Integer>();
 	}
 	
+	@Override
+	public void setInput(HashMap<String, String> input) {
+		// TODO Auto-generated method stub
+		for (Field f: getInputFields())
+		{
+			try
+			{				  
+				inputString = input.get(f.getName());			
+			}
+			catch (Exception ex)
+			{}
+		}
+	}
+
+	@Override
+	public void displayInput() {
+		// TODO Auto-generated method stub
+		System.out.printf("Input string with parenthesis is %s\n", inputString);
+	}
+
+	
+	
 	/**
 	 * Check if braces match. Also find the maximum distance 
 	 * @return
 	 * @throws Exception
 	 */
-	public Boolean Run () throws Exception
-	{
+	@Override	
+	public void run() throws Exception {
+		// TODO Auto-generated method stub
+		boolean matchStatus = false;
 		int stringIndex = 0;
-		maxDistanceBetweenBraces = 0;
+		int maxDistanceBetweenBraces = 0;
 		while (stringIndex < inputString.length())
 		{
 			char c = inputString.charAt(stringIndex);
@@ -45,7 +85,7 @@ public class ParenthesisMatchProblem {
 					{
 						// Failed to pop from stack, the string is not matched
 						maxDistanceBetweenBraces = 0;
-						return false;
+						matchStatus = false;
 					}
 					int distanceBetweenBraces = stringIndex - lastIndex;
 					if (distanceBetweenBraces > maxDistanceBetweenBraces)
@@ -60,9 +100,21 @@ public class ParenthesisMatchProblem {
 		}
 		if (indexStack.Empty())
 		{
-			return true;
+			matchStatus = true;
 		}
-		return false;
+		matchStatus = false;
+		
+		String resultString = (matchStatus)?"valid":"invalid";
+		System.out.printf("ParenthesisMatchProblem: Input parenthesis string %s is %s\n", inputString, resultString);
+		System.out.printf("ParenthesisMatchProblem: Max distance between { and } in %s = %d\n", inputString, maxDistanceBetweenBraces);
 	}
 
+	/**
+	 * Get all the fields in class with protected modifier
+	 * @return
+	 */
+	private ArrayList<Field> getInputFields()
+	{
+		return Utilities.getProtectedFields(this.getClass());
+	}
 }

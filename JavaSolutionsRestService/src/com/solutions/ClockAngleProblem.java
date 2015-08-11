@@ -23,7 +23,14 @@ public class ClockAngleProblem implements IProblemSolutions{
 	 */
 	private int hourValue;
 	private int minValue;
+
+	/**
+	 * Default constructor. Used to instantiate class on demand
+	 */
+	public ClockAngleProblem()
+	{
 	
+	}
 	/**
 	 * Contructor 
 	 * @param time at which to find the angle in format hh:mm
@@ -33,13 +40,10 @@ public class ClockAngleProblem implements IProblemSolutions{
 		this.inputTime = time;
 	}
 	
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 	
 	@Override
-	public void setInput(HashMap<String, Object> input) {
+	public void setInput(HashMap<String, String> input) {
 		// TODO Auto-generated method stub
 		for (Field f: getInputFields())
 		{
@@ -65,7 +69,12 @@ public class ClockAngleProblem implements IProblemSolutions{
 	@Override
 	public void run() throws Exception{
 		// TODO Auto-generated method stub
-		System.out.println("Run solution for " + this.getClass().getName());
+		System.out.println("Run solution for " + this.getClass().getSimpleName());
+		
+		if (inputTime == null)
+		{
+			throw new Exception("No input time specified");
+		}
 		
 		/* Parse the input string */
 		String[] timeValues = inputTime.split(":");
@@ -89,6 +98,11 @@ public class ClockAngleProblem implements IProblemSolutions{
 		int hourMinAngle = Math.abs(hourAngle - minAngle);		
 		
 		System.out.printf("ClockAngleProblem: Time between hour and minute hands for time %s = %d degrees\n", inputTime, hourMinAngle);
+	}
+	
+	public ArrayList<Field> getInputFields()
+	{
+		return Utilities.getProtectedFields(this.getClass());
 	}
 	
 }

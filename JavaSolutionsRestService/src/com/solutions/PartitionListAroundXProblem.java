@@ -1,18 +1,34 @@
 package com.solutions;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 import com.solutions.utils.*;
 
-public class PartitionListAroundXProblem {
+public class PartitionListAroundXProblem implements IProblemSolutions {
 	
-	LinkedListNode<Integer> head = null;
+	/**
+	 * Input array to use in list
+	 */
+	protected int[] inputArray;
+	/**
+	 * Index to partition the list around
+	 */
+	protected int partitionIndex = 0;
 	
-	public int partitionIndex = 0;
 	
-	public void createList(int[] data)
+	private LinkedListNode<Integer> head = null;
+	
+	/**
+	 * Create a list from the given input array
+	 */
+	public void createList()
 	{
 		head = null;
 		LinkedListNode<Integer> last = null;
-		for (int d: data)
+		for (int d: inputArray)
 		{
 			LinkedListNode<Integer> temp = new LinkedListNode<Integer>();
 			temp.data = d;
@@ -30,6 +46,31 @@ public class PartitionListAroundXProblem {
 		}
 	}
 	
+	@Override
+	public void setInput(HashMap<String, String> input) {
+		// TODO Auto-generated method stub
+		for (Field f: getInputFields())
+		{
+			try
+			{				
+				String value =  input.get(f.getName());
+				if (f.getName() == "inputArray")
+				{
+					inputArray = Arrays.stream(value.split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+				}
+				else
+				{
+					f.set(this, value);
+				}
+			}
+			catch (Exception ex)
+			{}
+		}
+	}
+	
+	/**
+	 * Display all inputs
+	 */
 	public void displayInput()
 	{
 		System.out.printf("Input Linked list: ");
@@ -37,7 +78,31 @@ public class PartitionListAroundXProblem {
 		System.out.println("Parition list around " + partitionIndex);
 	}
 	
-	public void displayList (LinkedListNode<Integer> node)
+		
+	/**
+	 * Solve the problem using 2 methods
+	 */
+	public void run() throws Exception {		
+		System.out.println("-------METHOD 1-----------\n");
+		runMethod1();
+		System.out.println("-------METHOD 2-----------\n");
+		runMethod2();
+	}
+
+	/**
+	 * Get all the fields in class with protected modifier
+	 * @return
+	 */
+	private ArrayList<Field> getInputFields()
+	{
+		return Utilities.getProtectedFields(this.getClass());
+	}
+	
+	/**
+	 * Display elements in list
+	 * @param node
+	 */
+	private void displayList (LinkedListNode<Integer> node)
 	{	
 		while (node != null)
 		{
@@ -46,14 +111,11 @@ public class PartitionListAroundXProblem {
 		}
 		System.out.println();
 	}
-	
-	public void run() throws Exception {		
-		System.out.println("-------METHOD 1-----------");
-		runMethod1();
-		System.out.println("-------METHOD 2-----------");
-		runMethod2();
-	}
-	
+
+	/**
+	 * Solve problem using 2 lists with 2 pointers per list.
+	 * @throws Exception
+	 */
 	private void runMethod1() throws Exception {
 		LinkedListNode<Integer> beforeStart = null;
 		LinkedListNode<Integer> beforeEnd = null;
@@ -106,6 +168,10 @@ public class PartitionListAroundXProblem {
 		 displayList(beforeStart);
 	}
 	
+	/**
+	 * Solve problem using 2 lists, 1 pointer each
+	 * @return
+	 */
 	private LinkedListNode<Integer> runMethod2 () {
 		LinkedListNode<Integer> beforeStart = null;
 		LinkedListNode<Integer> afterStart = null;
@@ -148,5 +214,4 @@ public class PartitionListAroundXProblem {
 		 xNode.next = afterStart;
 		 return beforeStart;
 	}
-
 }
