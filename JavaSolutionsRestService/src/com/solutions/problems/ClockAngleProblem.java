@@ -1,4 +1,4 @@
-package com.solutions;
+package com.solutions.problems;
 
 import java.lang.Math;
 import java.lang.reflect.Field;

@@ -1,5 +1,6 @@
 package com.solutions.runner;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.cli.CommandLine;
@@ -7,7 +8,8 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 
-import com.solutions.IProblemSolutions;
+import com.solutions.problems.IProblemSolutions;
+import com.solutions.utils.Utilities;
 
 public class MainRunner {
 	
@@ -16,6 +18,7 @@ public class MainRunner {
 		
 		try		
 		{	
+			ArrayList<Class<?>> classesInterface = Utilities.getClassesImplementingInterface(IProblemSolutions.class, IProblemSolutions.class.getPackage().getName());
 			Options options = new Options();
 			options.addOption("problemName", true, "Name of the problem to execute");
 			options.addOption("inputArguments", true, "Key value pair of all inputs to the problem separated by a ,");

@@ -1,4 +1,4 @@
-package com.solutions;
+package com.solutions.problems;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -150,7 +150,7 @@ public class StringPermutationsProblem implements IProblemSolutions{
 	 * Get all the fields in class with protected modifier
 	 * @return
 	 */
-	private ArrayList<Field> getInputFields()
+	public ArrayList<Field> getInputFields()
 	{
 		return Utilities.getProtectedFields(this.getClass());
 	}
