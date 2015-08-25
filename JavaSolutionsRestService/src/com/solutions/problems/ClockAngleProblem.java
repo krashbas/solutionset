@@ -12,7 +12,7 @@ import com.solutions.utils.*;
  * @author Rashmi
  *
  */
-public class ClockAngleProblem implements IProblemSolutions{
+public class ClockAngleProblem extends IProblemSolutions{
 	/**
 	 * Protected variable to save inputs: Time for which to find the angle
 	 */
@@ -38,22 +38,6 @@ public class ClockAngleProblem implements IProblemSolutions{
 	public ClockAngleProblem(String time)
 	{
 		this.inputTime = time;
-	}
-	
-	
-	
-	@Override
-	public void setInput(HashMap<String, String> input) {
-		// TODO Auto-generated method stub
-		for (Field f: getInputFields())
-		{
-			try
-			{
-				f.set(this, input.get(f.getName()));
-			}
-			catch (IllegalAccessException ex)
-			{}
-		}
 	}
 
 	@Override
@@ -99,10 +83,4 @@ public class ClockAngleProblem implements IProblemSolutions{
 		
 		System.out.printf("ClockAngleProblem: Time between hour and minute hands for time %s = %d degrees\n", inputTime, hourMinAngle);
 	}
-	
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
-	
 }

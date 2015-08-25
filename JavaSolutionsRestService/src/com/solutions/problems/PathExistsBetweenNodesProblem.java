@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @author rakuma
  *
  */
-public class PathExistsBetweenNodesProblem implements IProblemSolutions {
+public class PathExistsBetweenNodesProblem extends IProblemSolutions {
 
 	/* (non-Javadoc)
 	 * @see com.solutions.problems.IProblemSolutions#setInput(java.util.HashMap)
@@ -40,13 +40,6 @@ public class PathExistsBetweenNodesProblem implements IProblemSolutions {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.solutions.problems.IProblemSolutions#getInputFields()
-	 */
-	@Override
-	public ArrayList<Field> getInputFields() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

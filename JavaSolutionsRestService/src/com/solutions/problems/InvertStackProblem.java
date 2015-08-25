@@ -13,7 +13,7 @@ import com.solutions.utils.Utilities;
  * @author rakuma
  *
  */
-public class InvertStackProblem implements IProblemSolutions {
+public class InvertStackProblem extends IProblemSolutions {
 	
 	/**
 	 * Input array of numbers to initiate the stack with
@@ -28,21 +28,6 @@ public class InvertStackProblem implements IProblemSolutions {
 		
 	}
 	
-	@Override
-	public void setInput(HashMap<String, String> input) {
-		// TODO Auto-generated method stub
-		for (Field f: getInputFields())
-		{
-			try
-			{
-				String iArray =  input.get(f.getName());
-				inputArray = Arrays.stream(iArray.split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();				
-			}
-			catch (Exception ex)
-			{}
-		}
-	}
-
 	@Override
 	public void displayInput() {
 		// TODO Auto-generated method stub
@@ -67,15 +52,6 @@ public class InvertStackProblem implements IProblemSolutions {
 		numStack.Display();
 	}
 
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
-	
 	/**
 	 * Helper function to insert a value at the bottom of a stack using recursion
 	 * @param s

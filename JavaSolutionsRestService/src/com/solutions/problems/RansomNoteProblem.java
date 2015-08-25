@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import com.solutions.utils.Utilities;
 
-public class RansomNoteProblem implements IProblemSolutions {
+public class RansomNoteProblem extends IProblemSolutions {
         
 	protected String magazine;
 	protected String ransomNote;
@@ -105,12 +105,5 @@ public class RansomNoteProblem implements IProblemSolutions {
 		System.out.printf("RansomNoteProblem: Ransom note --\"%s\"-- %s be formed from magazine --\"%s\"--\n", ransomNote, resultString, magazine);
 	}
 
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 }

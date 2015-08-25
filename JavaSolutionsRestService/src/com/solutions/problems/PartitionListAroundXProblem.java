@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import com.solutions.utils.*;
 
-public class PartitionListAroundXProblem implements IProblemSolutions {
+public class PartitionListAroundXProblem extends IProblemSolutions {
 	
 	/**
 	 * Input array to use in list
@@ -45,29 +45,7 @@ public class PartitionListAroundXProblem implements IProblemSolutions {
 			}
 		}
 	}
-	
-	@Override
-	public void setInput(HashMap<String, String> input) {
-		// TODO Auto-generated method stub
-		for (Field f: getInputFields())
-		{
-			try
-			{				
-				String value =  input.get(f.getName());
-				if (f.getName() == "inputArray")
-				{
-					inputArray = Arrays.stream(value.split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-				}
-				else
-				{
-					f.set(this, value);
-				}
-			}
-			catch (Exception ex)
-			{}
-		}
-	}
-	
+
 	/**
 	 * Display all inputs
 	 */
@@ -89,14 +67,6 @@ public class PartitionListAroundXProblem implements IProblemSolutions {
 		runMethod2();
 	}
 
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
 	
 	/**
 	 * Display elements in list

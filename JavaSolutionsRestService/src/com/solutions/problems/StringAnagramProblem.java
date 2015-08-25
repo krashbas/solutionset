@@ -11,7 +11,7 @@ import com.solutions.utils.Utilities;
  * @author rakuma
  *
  */
-public class StringAnagramProblem implements IProblemSolutions {
+public class StringAnagramProblem extends IProblemSolutions {
 	protected String firstString;
 	protected String secondString;
 
@@ -91,13 +91,6 @@ public class StringAnagramProblem implements IProblemSolutions {
 		System.out.printf("StringAnagramProblem: The given string %s and %s %s anagrams.\n", firstString, secondString, resultString);		
 	}
 	
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 	
 }

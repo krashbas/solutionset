@@ -37,7 +37,7 @@ public class ProblemRunnerService {
 				List<JAXBElement<String>> marshalledValues = new ArrayList<JAXBElement<String>>();
 				for (String val: allSolutions)
 				{
-					JAXBElement<String> jax = new JAXBElement(new QName("test"), String.class, val);
+					JAXBElement<String> jax = new JAXBElement<String>(new QName("test"), String.class, val);
 					marshalledValues.add(jax);
 				}
 				return marshalledValues;

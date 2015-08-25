@@ -12,7 +12,7 @@ import com.solutions.utils.Utilities;
  *
  */
 
-public class UniqueCharsInString implements IProblemSolutions { 
+public class UniqueCharsInString extends IProblemSolutions { 
 	/**
 	 * Input string to test for unique characters
 	 */
@@ -116,13 +116,6 @@ public class UniqueCharsInString implements IProblemSolutions {
 		System.out.printf("UniqueCharsInString: The given input string %s is %s\n", inputString, resultString);
 	}
 
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 	
 }

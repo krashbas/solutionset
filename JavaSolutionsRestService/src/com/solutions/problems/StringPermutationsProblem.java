@@ -11,7 +11,7 @@ import com.solutions.utils.Utilities;
  * @author rakuma
  *
  */
-public class StringPermutationsProblem implements IProblemSolutions{
+public class StringPermutationsProblem extends IProblemSolutions{
 
 	protected String inputString = "";
 	
@@ -146,13 +146,5 @@ public class StringPermutationsProblem implements IProblemSolutions{
 	}
 	
 	
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
 	
 }

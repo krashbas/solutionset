@@ -11,7 +11,7 @@ import com.solutions.utils.Utilities;
  * @author rakuma
  *
  */
-public class ReverseStringProblem implements IProblemSolutions{
+public class ReverseStringProblem extends IProblemSolutions{
 	/**
 	 * Input string to reverse
 	 */
@@ -85,12 +85,5 @@ public class ReverseStringProblem implements IProblemSolutions{
 		iArray[secondIndex] = temp;
 	}
 	
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 }

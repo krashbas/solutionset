@@ -12,7 +12,7 @@ import com.solutions.utils.Utilities;
  * @author rakuma
  *
  */
-public class ParenthesisMatchProblem implements IProblemSolutions {
+public class ParenthesisMatchProblem extends IProblemSolutions {
 	protected String inputString;
 	
 	/**
@@ -36,20 +36,6 @@ public class ParenthesisMatchProblem implements IProblemSolutions {
 	{
 		this.inputString = input;
 		indexStack = new MyGenericStack<Integer>();
-	}
-	
-	@Override
-	public void setInput(HashMap<String, String> input) {
-		// TODO Auto-generated method stub
-		for (Field f: getInputFields())
-		{
-			try
-			{				  
-				inputString = input.get(f.getName());			
-			}
-			catch (Exception ex)
-			{}
-		}
 	}
 
 	@Override
@@ -109,12 +95,5 @@ public class ParenthesisMatchProblem implements IProblemSolutions {
 		System.out.printf("ParenthesisMatchProblem: Max distance between { and } in %s = %d\n", inputString, maxDistanceBetweenBraces);
 	}
 
-	/**
-	 * Get all the fields in class with protected modifier
-	 * @return
-	 */
-	public ArrayList<Field> getInputFields()
-	{
-		return Utilities.getProtectedFields(this.getClass());
-	}
+	
 }

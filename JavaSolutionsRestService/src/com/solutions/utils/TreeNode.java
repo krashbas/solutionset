@@ -1,11 +1,17 @@
 package com.solutions.utils;
 
-public class TreeNode {
-	int data;
+/**
+ * Generic tree data structure
+ * @author rakuma
+ *
+ * @param <T>
+ */
+public class TreeNode<T> {
+	public T data;
 	public TreeNode left;
 	public TreeNode right;
 	
-	TreeNode(int d)
+	TreeNode(T d)
 	{
 		this.data = d;
 		this.left = null;
