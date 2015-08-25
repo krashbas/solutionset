@@ -25,9 +25,9 @@ public class Utilities {
 		return retFields;
 	}
 	
-	public static ArrayList<String> getClassNamesImplementingInterface(Class<?> theInterface, String thePackage)
+	public static ArrayList<String> getStringListExtendingClass(Class<?> baseClass, String packageName)
 	{
-		ArrayList<Class<?>> listClasses = getClassesImplementingInterface(theInterface, thePackage);
+		ArrayList<Class<?>> listClasses = getClassesExtendingClass(baseClass, packageName);
 		ArrayList<String> listClassNames = new ArrayList<String>();
 		listClasses.forEach((c) -> {
 			listClassNames.add(c.getSimpleName());
@@ -36,20 +36,20 @@ public class Utilities {
 		return listClassNames;
 	}
 	
-	public static ArrayList<Class<?>> getClassesImplementingInterface (Class<?> theInterface, String thePackage)
+	public static ArrayList<Class<?>> getClassesExtendingClass (Class<?> baseClass, String packageName)
 	{
 		ArrayList<Class<?>> listClasses = new ArrayList<Class<?>>();
 		
-		ArrayList<Class<?>> allClasses = getAllClasses(thePackage);
+		ArrayList<Class<?>> allClasses = getAllClasses(packageName);
 		
 		for (Class<?> aClass: allClasses)
 		{
-			if (aClass.equals(theInterface))
+			if (aClass.equals(baseClass))
 			{
 				continue;
 			}
 			
-			if (theInterface.isAssignableFrom(aClass))
+			if (baseClass.isAssignableFrom(aClass))
 			{
 				listClasses.add(aClass);
 			}

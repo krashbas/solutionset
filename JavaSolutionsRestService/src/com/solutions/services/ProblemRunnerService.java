@@ -30,17 +30,21 @@ public class ProblemRunnerService {
 		// Return the list of Available problems to the user in the browser
 		  @GET
 		  @Path("problemlist")
-		  @Produces(MediaType.TEXT_XML)
-		  public List<JAXBElement<String>> getAvailableProblemsLIst() {
-				List<String> allSolutions = Utilities.getClassNamesImplementingInterface(IProblemSolutions.class, IProblemSolutions.class.getPackage().getName());
-				
-				List<JAXBElement<String>> marshalledValues = new ArrayList<JAXBElement<String>>();
-				for (String val: allSolutions)
-				{
-					JAXBElement<String> jax = new JAXBElement<String>(new QName("test"), String.class, val);
-					marshalledValues.add(jax);
-				}
-				return marshalledValues;
+		  @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+		  public List<ProblemsInfo> getAvailableProblemsLIst() {
+			  List<ProblemsInfo> pInfo = new ArrayList<ProblemsInfo>();
+			  pInfo.addAll(ProblemsInfoDao.instance.getSolutionMap().values());
+			    return pInfo;
+			  
+//				List<String> allSolutions = Utilities.getStringListExtendingClass(IProblemSolutions.class, IProblemSolutions.class.getPackage().getName());
+//				
+//				List<JAXBElement<String>> marshalledValues = new ArrayList<JAXBElement<String>>();
+//				for (String val: allSolutions)
+//				{
+//					JAXBElement<String> jax = new JAXBElement<String>(new QName("test"), String.class, val);
+//					marshalledValues.add(jax);
+//				}
+//				return marshalledValues;
 		  }
 		  
 		  
@@ -52,10 +56,7 @@ public class ProblemRunnerService {
 		  @Path("count")
 		  @Produces(MediaType.TEXT_PLAIN)
 		  public String getCount() {
-				List<String> allSolutions = new ArrayList<String>();
-				allSolutions.addAll(Utilities.getClassNamesImplementingInterface(IProblemSolutions.class, IProblemSolutions.class.getPackage().getName()));
-				  
-				int count = allSolutions.size();
+				int count = ProblemsInfoDao.instance.getSolutionMap().size();
 				return String.valueOf(count);
 		  }
 }
