@@ -1,4 +1,4 @@
-package com.solutions.utils;
+package com.solutions.helpers;
 
 import java.util.ArrayList;
 public class MyGenericStack<T> {

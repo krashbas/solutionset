@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import com.solutions.helpers.LinkedListNode;
 import com.solutions.utils.*;
 
 public class PartitionListAroundXProblem extends IProblemSolutions {

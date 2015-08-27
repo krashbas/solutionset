@@ -1,4 +1,4 @@
-package com.solutions.utils;
+package com.solutions.helpers;
 
 public class Box {
 	int width;

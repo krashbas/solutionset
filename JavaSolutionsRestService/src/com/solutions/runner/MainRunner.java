@@ -17,14 +17,17 @@ public class MainRunner {
 	
 	static final String PACKAGE_NAME = "com.solutions.problems";
 	
-	public static String RunProblemCaptureStdout(String problemName, String inputArguments)
+	public static String RunProblemCaptureStdout(String problemName, String inputArguments, boolean captureOutput)
 	{
 		PrintStream curPrintStream = System.out;
 		try
-	    {
+	    {			
 			ByteArrayOutputStream byteArrayStream = new ByteArrayOutputStream();
 		    PrintStream newPrintStream = new PrintStream(byteArrayStream);
-		    System.setOut(newPrintStream);
+		    if (captureOutput)
+			{
+		    	System.setOut(newPrintStream);
+			}
 			
 		    if (problemName != null)
 			{
@@ -56,7 +59,10 @@ public class MainRunner {
 		}
 	    finally
 	    {
-	    	System.setOut(curPrintStream);
+	    	if (captureOutput)
+			{
+	    		System.setOut(curPrintStream);
+			}
 	    }
 	    
 		return "";
@@ -74,7 +80,7 @@ public class MainRunner {
 			CommandLine cmdOptions = parser.parse(options, args);
 			String problemName = cmdOptions.getOptionValue("problemName");
 			String problemArgs = cmdOptions.getOptionValue("inputArguments");
-			String solutionStdout = RunProblemCaptureStdout(problemName, problemArgs);
+			String solutionStdout = RunProblemCaptureStdout(problemName, problemArgs, false);
 
 		    System.out.println("########Output of problem#########\n" + solutionStdout.toString());
 		}

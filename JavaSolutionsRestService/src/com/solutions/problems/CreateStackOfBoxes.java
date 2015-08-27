@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import com.solutions.utils.Box;
+import com.solutions.helpers.Box;
 
 public class CreateStackOfBoxes extends IProblemSolutions {
 

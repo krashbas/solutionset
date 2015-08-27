@@ -1,4 +1,4 @@
-package com.solutions.utils;
+package com.solutions.helpers;
 
 /**
  * Generic tree data structure

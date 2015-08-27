@@ -4,8 +4,8 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import com.solutions.utils.TreeNode;
-import com.solutions.utils.TreesHelperFunction;
+import com.solutions.helpers.TreeNode;
+import com.solutions.helpers.TreesHelperFunction;
 
 public class LeastCommonAncestorInBT extends IProblemSolutions {
 
