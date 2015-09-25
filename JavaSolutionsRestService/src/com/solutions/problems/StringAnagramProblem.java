@@ -4,17 +4,19 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-/**
- * This class implements a solution to check if two given strings are permutations of each other. Questions to ask: String is ASCII or Uicode, is it case sensitive, and significance of spaces
- * @author rakuma
- *
- */
-public class StringAnagramProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to check if two given strings are permutations of each other. Questions to ask: String is ASCII or Uicode, is it case sensitive, and significance of spaces.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class StringAnagramProblem extends BaseProblemSolutions {
 	protected String firstString;
 	protected String secondString;
-
+	
 	/**
 	 * Default constructor
 	 */

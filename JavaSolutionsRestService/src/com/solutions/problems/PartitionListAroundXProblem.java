@@ -8,7 +8,13 @@ import java.util.HashMap;
 import com.solutions.helpers.LinkedListNode;
 import com.solutions.utils.*;
 
-public class PartitionListAroundXProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to partition a list around an input index such that elements before this index and less than and elements after this index are greater than value at index.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class PartitionListAroundXProblem extends BaseProblemSolutions {
 	
 	/**
 	 * Input array to use in list

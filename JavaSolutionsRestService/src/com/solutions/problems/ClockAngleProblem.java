@@ -7,12 +7,13 @@ import java.util.HashMap;
 
 import com.solutions.utils.*;
 
-/**
- * This class implements a solution to the problem of finding the angle between the hour hand and minute hand for a given time
- * @author Rashmi
- *
- */
-public class ClockAngleProblem extends IProblemSolutions{
+@ProblemDescription (
+	author = "RRR",
+	description = "This class implements a solution to the problem of finding the angle between the hour hand and minute hand for a given time",
+	revision = "1.0",
+	lastModifiedDate = "9/25/2015"
+)
+public class ClockAngleProblem extends BaseProblemSolutions{
 	/**
 	 * Protected variable to save inputs: Time for which to find the angle
 	 */
@@ -23,6 +24,8 @@ public class ClockAngleProblem extends IProblemSolutions{
 	 */
 	private int hourValue;
 	private int minValue;
+
+	protected String description = "Base class for all problem solutions";
 
 	/**
 	 * Default constructor. Used to instantiate class on demand

@@ -2,7 +2,15 @@ package com.solutions.problems;
 
 import java.util.Arrays;
 
-public class MergeSortProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to merge sort problem.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class MergeSortProblem extends BaseProblemSolutions {
 	
 	protected int[] inputArray;
 	

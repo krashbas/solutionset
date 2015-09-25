@@ -6,8 +6,15 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import com.solutions.helpers.Box;
+import com.solutions.utils.ProblemDescription;
 
-public class CreateStackOfBoxes extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to creating largest stack of boxes given an input of boxes with largest at the bottom.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class CreateStackOfBoxes extends BaseProblemSolutions {
 
 	/**
 	 * Box dimentions in format w1,d1,h1|w2,d2,h2|w3,d3,h3...

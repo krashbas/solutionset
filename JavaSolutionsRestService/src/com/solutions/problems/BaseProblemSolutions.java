@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 import com.solutions.utils.Utilities;
 
-public abstract class IProblemSolutions {
-	
+public abstract class BaseProblemSolutions {
+		
 	public void setInput(HashMap<String, String> input)
 	{
 		// TODO Auto-generated method stub

@@ -4,9 +4,16 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-public class RansomNoteProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to check if a given note can be formed from words in a magazine.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class RansomNoteProblem extends BaseProblemSolutions {
         
 	protected String magazine;
 	protected String ransomNote;

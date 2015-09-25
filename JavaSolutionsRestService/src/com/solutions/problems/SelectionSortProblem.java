@@ -2,7 +2,15 @@ package com.solutions.problems;
 
 import java.util.Arrays;
 
-public class SelectionSortProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to selection sort problem.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class SelectionSortProblem extends BaseProblemSolutions {
 
 	protected int[] inputArray;
 	

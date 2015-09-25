@@ -2,9 +2,18 @@ package com.solutions.problems;
 
 import java.util.Arrays;
 
-public class BubbleSortProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements the bubble sort algorithm.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class BubbleSortProblem extends BaseProblemSolutions {
 
 	protected int[] inputArray;
+	protected String description = "Base class for all problem solutions";
 	
 	@Override
 	public void displayInput() {

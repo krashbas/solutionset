@@ -6,19 +6,22 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import com.solutions.helpers.MyGenericStack;
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-/**
- * Invert a given stack using recursion
- * @author rakuma
- *
- */
-public class InvertStackProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to invert a stack using recursion.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class InvertStackProblem extends BaseProblemSolutions {
 	
 	/**
 	 * Input array of numbers to initiate the stack with
 	 */
 	protected int[] inputArray;
+	protected String description = "Base class for all problem solutions";
 	
 	/**
 	 * Default constructor

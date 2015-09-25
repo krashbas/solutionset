@@ -2,7 +2,15 @@ package com.solutions.problems;
 
 import java.util.Arrays;
 
-public class BinarySearchProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to the binary search problem.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class BinarySearchProblem extends BaseProblemSolutions {
 
 	/** Input array 
 	 * 
@@ -12,6 +20,7 @@ public class BinarySearchProblem extends IProblemSolutions {
 	 * Number to search in inputArray
 	 */
 	protected int inputNumber;
+	
 	
 	@Override
 	public void displayInput() {

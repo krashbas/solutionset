@@ -4,8 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.solutions.helpers.PersonHW;
+import com.solutions.utils.ProblemDescription;
 
-public class IncreasingSequencePairsProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements solution to increasing pairs problem to find a way to stack people on atop another such that each person above is smaller in height and weight than the person below.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class IncreasingSequencePairsProblem extends BaseProblemSolutions {
 	/**
 	 * String in format n1,m1#n2,m2,n3,m4....
 	 * Will be parsed into an ArrayList<Pairs> where pairs class has n and m variables
@@ -13,6 +20,8 @@ public class IncreasingSequencePairsProblem extends IProblemSolutions {
 	protected String numberPairsString;
 		
 	private ArrayList<PersonHW> array = null;
+
+	protected String description = "Base class for all problem solutions";
 	@Override
 	public void displayInput() {
 		// TODO Auto-generated method stub

@@ -6,8 +6,15 @@ import java.util.HashMap;
 
 import com.solutions.helpers.TreeNode;
 import com.solutions.helpers.TreesHelperFunction;
+import com.solutions.utils.ProblemDescription;
 
-public class LeastCommonAncestorInBT extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to find least common ancestor in Binary tree.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class LeastCommonAncestorInBT extends BaseProblemSolutions {
 
 	protected Integer[] inorderArray;
 	protected Integer[] preorderArray;
@@ -15,6 +22,7 @@ public class LeastCommonAncestorInBT extends IProblemSolutions {
 	protected Integer inputNodeQ;
 	
 	private TreeNode<Integer> root = null;
+	protected String description = "Base class for all problem solutions";
 	
 	@Override
 	public void setInput(HashMap<String, String> input)

@@ -2,7 +2,14 @@ package com.solutions.problems;
 
 import java.util.Arrays;
 
-public class QuickSortProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to the quick sort.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class QuickSortProblem extends BaseProblemSolutions {
 
 	protected int[] inputArray;
 	

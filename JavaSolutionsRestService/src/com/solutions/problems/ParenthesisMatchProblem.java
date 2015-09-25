@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.solutions.helpers.MyGenericStack;
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-/**
- * This class implements solution to check if a given string with parenthesis is valid and also calculates the max distance between the { and }. 
- * @author rakuma
- *
- */
-public class ParenthesisMatchProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements solution to check if a given string with parenthesis is valid and also calculates the max distance between the { and }.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class ParenthesisMatchProblem extends BaseProblemSolutions {
 	protected String inputString;
 	
 	/**

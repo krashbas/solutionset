@@ -7,11 +7,17 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * @author rakuma
- *
- */
-public class PathExistsBetweenNodesProblem extends IProblemSolutions {
+import com.solutions.utils.ProblemDescription;
+
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to check if a path exists between two nodes in a tree.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class PathExistsBetweenNodesProblem extends BaseProblemSolutions {
+
+	protected String description = "Base class for all problem solutions";
 
 	/* (non-Javadoc)
 	 * @see com.solutions.problems.IProblemSolutions#setInput(java.util.HashMap)

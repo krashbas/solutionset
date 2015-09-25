@@ -20,7 +20,7 @@ import javax.ws.rs.core.UriInfo;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
-import com.solutions.problems.IProblemSolutions;
+import com.solutions.problems.BaseProblemSolutions;
 import com.solutions.utils.Utilities;
 
 
@@ -34,17 +34,7 @@ public class ProblemRunnerService {
 		  public List<ProblemsInfo> getAvailableProblemsLIst() {
 			  List<ProblemsInfo> pInfo = new ArrayList<ProblemsInfo>();
 			  pInfo.addAll(ProblemsInfoDao.instance.getSolutionMap().values());
-			    return pInfo;
-			  
-//				List<String> allSolutions = Utilities.getStringListExtendingClass(IProblemSolutions.class, IProblemSolutions.class.getPackage().getName());
-//				
-//				List<JAXBElement<String>> marshalledValues = new ArrayList<JAXBElement<String>>();
-//				for (String val: allSolutions)
-//				{
-//					JAXBElement<String> jax = new JAXBElement<String>(new QName("test"), String.class, val);
-//					marshalledValues.add(jax);
-//				}
-//				return marshalledValues;
+ 			    return pInfo;
 		  }
 		  
 		  
@@ -53,7 +43,7 @@ public class ProblemRunnerService {
 		  // Use http://localhost:8080/JavaSolutionsRestService/solutions/runner/count
 		  // to get the total number of records
 		  @GET
-		  @Path("count")
+		  @Path("problemcount")
 		  @Produces(MediaType.TEXT_PLAIN)
 		  public String getCount() {
 				int count = ProblemsInfoDao.instance.getSolutionMap().size();

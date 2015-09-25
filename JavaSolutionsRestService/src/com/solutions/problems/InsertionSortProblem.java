@@ -1,9 +1,16 @@
 package com.solutions.problems;
 import java.util.Arrays;
 
-import com.solutions.problems.IProblemSolutions;
+import com.solutions.problems.BaseProblemSolutions;
+import com.solutions.utils.ProblemDescription;
 
-public class InsertionSortProblem extends IProblemSolutions {
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements the insertion sort algorithm.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class InsertionSortProblem extends BaseProblemSolutions {
 	
 	protected int[] inputArray;
 	

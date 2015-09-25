@@ -4,15 +4,16 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-/**
- * This class implements a solution to test if a given input string has unique characters
- * @author rakuma
- *
- */
-
-public class UniqueCharsInString extends IProblemSolutions { 
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to test if a given input string has unique characters.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class UniqueCharsInString extends BaseProblemSolutions { 
 	/**
 	 * Input string to test for unique characters
 	 */

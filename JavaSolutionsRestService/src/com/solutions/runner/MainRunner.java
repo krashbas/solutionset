@@ -9,7 +9,7 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 
-import com.solutions.problems.IProblemSolutions;
+import com.solutions.problems.BaseProblemSolutions;
 
 import oracle.jrockit.jfr.parser.ParseException;
 
@@ -46,7 +46,7 @@ public class MainRunner {
 				}
 				String fullClassName = PACKAGE_NAME + "." + problemName;
 				
-				IProblemSolutions inputProblem = (IProblemSolutions)Class.forName(fullClassName).newInstance();
+				BaseProblemSolutions inputProblem = (BaseProblemSolutions)Class.forName(fullClassName).newInstance();
 				inputProblem.setInput(inputArgs);
 				inputProblem.displayInput();
 				inputProblem.run();

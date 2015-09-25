@@ -4,14 +4,16 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.solutions.utils.ProblemDescription;
 import com.solutions.utils.Utilities;
 
-/**
- * This class implements a solution to finding all permutations of a given string.
- * @author rakuma
- *
- */
-public class StringPermutationsProblem extends IProblemSolutions{
+@ProblemDescription (
+		author = "RRR",
+		description = "This class implements a solution to finding all permutations of a given string.",
+		revision = "1.0",
+		lastModifiedDate = "9/25/2015"
+	)
+public class StringPermutationsProblem extends BaseProblemSolutions{
 
 	protected String inputString = "";
 	
